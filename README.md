@@ -18,6 +18,8 @@ Deployement Instructions :
 
 Description to project :
 # Functionlities in the project
-1) Get all movies list from provided api on the start up of server.
-2) Filter movie list to get list with movies which are only in san Francisco.
-3) Filter movie list to get movies by location.
+1) Get all movies list from provided api and stored to the list on the start up of server.
+2) Get the latitude and the longitude of the above locations using the Maps API.
+2) Send all the data along with the coordinates of all locations as response to the JavaScript POST request as well as Android    POST request.
+3) Filter movie list to get movies by location and send response to the JavaScript POST request as well as Android POST            request.
+4) Filter list to get movies only in San Francisco and send response to the JavaScript POST request as well as Android POST        request.

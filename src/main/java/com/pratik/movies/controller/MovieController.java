@@ -74,4 +74,16 @@ public class MovieController {
 
         return new MovieResponse(1, null, sanFranciscoMovieList);
     }
+
+    @RequestMapping(value = {"/getMovieByAddress"}, method = RequestMethod.POST, produces = "application/json")
+    public MovieResponse getMovieByAddress(@RequestParam("address") String address) {
+
+        if (moviesInfoList == null || moviesInfoList.isEmpty()) {
+            getMovieApiData();
+        }
+
+        List<MoviesInfo> sanFranciscoMovieList = moviesInfoList.stream().filter(sf -> Pattern.compile(Pattern.quote(sf.getLocations()), Pattern.CASE_INSENSITIVE).matcher(address).find()).collect(Collectors.toList());
+
+        return new MovieResponse(1, null, sanFranciscoMovieList);
+    }
 }
